@@ -31,10 +31,9 @@
 PAPI_LIB_DIR = ${HOME}/.local/lib
 PAPI_INC_DIR = ${HOME}/.local/include
 
-GEOPM_LIB_DIR = ${HOME}/build/geopm/lib
 GEOPM_INC_DIR = ${HOME}/build/geopm/include
 
-LDLIBS += -L$(PAPI_LIB_DIR) -L$(GEOPM_LIB_DIR) -lgeopm -lpapi -Wl,-rpath=$(PAPI_LIB_DIR)
+LDLIBS += -L$(PAPI_LIB_DIR) -lpapi -Wl,-rpath=$(PAPI_LIB_DIR)
 CPPFLAGS += -I$(PAPI_INC_DIR) -I$(GEOPM_INC_DIR) -Wall -Werror -fPIC
 CXXFLAGS = -g -std=c++11
 LINK.o = $(LINK.cc)

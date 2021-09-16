@@ -58,6 +58,5 @@ function get_iogroup()
 	make install
 }
 
-test -f "${GEOPM_LIB}/libgeopm.so" || ( echo 'ERROR: libgeopm.so must exist in ${GEOPM_LIB}.' ; exit 1 )
 get_papi
 get_iogroup

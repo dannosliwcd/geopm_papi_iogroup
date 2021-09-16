@@ -132,6 +132,10 @@ PapiIOGroup::PapiIOGroup()
         event_names = std::vector<std::string>(begin, end);
     }
 
+    if (event_names.empty()) {
+	    return;
+    }
+
     int retval;
 
     // Initialize PAPI and our multiplexed events set
