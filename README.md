@@ -29,8 +29,8 @@ Example to decrease paranoia: `echo 0 | sudo tee /proc/sys/kernel/perf_event_par
 
 The following environment variables must be set to use this plugin:
  * `GEOPM_PLUGIN_PATH` must be set to the directory where the build output
-   (`libgeopmiogroup_papi_iogroup.so.0.0.0`) is located. By default, that will
-   be the path where `make` was executed.
+   (`libgeopmiogroup_papi_iogroup.so.0.0.0`) is located. The `make install`
+   rule will copy the plugin to that path if it is defined.
  * `GEOPM_PAPI_EVENTS` must be set to a space-separated list of PAPI events you
    are interested in making accessible to GEOPM. Run `papi_avail` and
    `papi_native_avail` to determine which events are available on your system.

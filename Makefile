@@ -45,6 +45,11 @@ libgeopmiogroup_papi_iogroup.so.0.0.0: papi_iogroup.o
 papi_iogroup.o: papi_iogroup.cpp
 	$(COMPILE.cc) $< $(OUTPUT_OPTION)
 
+.PHONY: install
+install: libgeopmiogroup_papi_iogroup.so.0.0.0
+	@test "${GEOPM_PLUGIN_PATH}" || ( echo "Error: GEOPM_PLUGIN_PATH must be set before installing this plugin"; exit 1 )
+	cp libgeopmiogroup_papi_iogroup.so.0.0.0 "${GEOPM_PLUGIN_PATH}"
+
 .PHONY: clean
 clean:
 	rm -f libgeopmiogroup_papi_iogroup.so* papi_iogroup.o
